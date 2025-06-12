@@ -1,0 +1,13 @@
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+  minimarket:
+    depends_on:
+      - db
+    build: .
+    ports:
+      - "8080:8080"
+	  
+	  
